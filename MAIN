@@ -1,0 +1,27 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ */
+
+package com.mycompany.jogodomilhao;
+
+/**
+ *
+ * @author Swat
+ */
+import java.util.*;
+public class JogoDoMilhao{
+
+    public static void main(String[] args) {
+       questions questao1 = new questions ("Qual é a capital da França?");
+        
+        questao1.addalternativa("Paris");
+        questao1.addalternativa("Londres");
+        questao1.addalternativa("Roma");
+        questao1.addalternativa("Berlim");
+        
+         System.out.println(questao1.exibeDados());
+         
+         
+        
+    }
+}
