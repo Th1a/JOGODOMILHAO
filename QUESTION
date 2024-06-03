@@ -1,0 +1,52 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+package com.mycompany.jogodomilhao;
+
+/**
+ *
+ * @author Swat
+ */
+import java.util.*;
+public class questions {
+    protected static int contador;
+    protected String questaoPrincipal;
+     protected ArrayList<String> alternativas;
+    
+    
+     public questions(String questaoPrincipal){
+     this.questaoPrincipal = questaoPrincipal;
+     this.alternativas = new ArrayList<>();
+     contador ++;
+     }
+     
+     public String getQuestaoPrincipal(){
+         return questaoPrincipal;
+     }
+     public ArrayList<String> getAlternativas(){
+         return alternativas;
+     }
+     public void setQuestoePrincipal(String questaoPrincipal){
+         this.questaoPrincipal = questaoPrincipal;
+     }
+     public void setAlternativas(ArrayList<String> alternativas){
+         this.alternativas = alternativas;
+     }
+     public void  addalternativa(String alternativa){
+         this.alternativas.add(alternativa);
+     }
+     public String exibeDados(){
+          String dados = "Questão " + contador + ": " + questaoPrincipal + "\nAlternativas:\n";
+        char opcao = 'A';
+        for (String alternativa : alternativas) {
+            dados += opcao + ") " + alternativa + "\n";
+            opcao++;
+     }
+        return dados;
+     
+    }
+}
+
+   
+
