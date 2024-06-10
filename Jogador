@@ -6,22 +6,25 @@ package com.mycompany.jogodomilhao;
 
 /**
  *
- * @author 324149373
+ * @author Swat
  */
 import java.util.*;
 public class Jogador {
+     
+     Scanner ler = new Scanner(System.in);
     
-    Scanner ler = new Scanner(System.in);
+    protected String nome;
+    protected String apelido;
+    protected boolean nomeErrado;
     
-    private String nome;
-    private String apelido;
-    private boolean nomeErrado;
-    
-    public Jogador(String nome , String apelido , boolean nomeErrado){
-        
+    public Jogador(String nome, String apelido, boolean nomeErrado){
         this.nome = nome;
         this.apelido = apelido;
         this.nomeErrado = nomeErrado;
+    }
+    @Override
+    public String toString(){
+      return "Nome: " + this.nome  + " Apelido: " + this.apelido ;
     }
            
     public String getNome(){
@@ -32,42 +35,36 @@ public class Jogador {
         this.nome = nome;
     }
     
-     public String getApelido(){
+    public String getApelido(){
         return apelido;
     }
      
-       public void setApelido(String apelido){
+    public void setApelido(String apelido){
         this.apelido = apelido;
     }
     
-     public boolean getNomeErrado(){
-         while( true){
-            if(nome.equals("Sim")){
-             System.out.println("Digite seu nome correto: ");
-             String caractere = ler.nextLine();
-             System.out.println("Tem ceteza que seu nome/apelidos está correto?");
-             String lerResposta = ler.nextLine();
-              if(lerResposta.equals("Sim")){
-                  this.lerReposta = nome;
-                  while(false)             
-                } 
-              
-              else if (lerResposta.equals("Nao")){
-                  while(true)
-                }
-          }
-         
-             
-         }
-     }
+    public boolean isNomeErrado(){
+        return nomeErrado;
+    }
+
+    public void setNomeErrado(boolean nomeErrado){
+        this.nomeErrado = nomeErrado;
+    }
+
+    public void verificarNomeErrado() {
+        while (nomeErrado) {
+            System.out.println("Digite seu nome : ");
+            nome = ler.nextLine();
+            System.out.println("Digite seu apelido : ");
+            apelido = ler.nextLine();
+            System.out.println("Tem certeza que seu nome/apelido está correto?");
+            String lerResposta = ler.nextLine();
+            if (lerResposta.equalsIgnoreCase("Sim")) {
+                nomeErrado = false;
+            }
+        }
+    }
        
-       public String  exibeDados(){
-           System.out.println("Seu nome é :" + this.nome);
-           System.out.println("Seu apelido é: "  + this.apelido);
-                      
-           return null;
-       }
-       
-       
-       
-}
+ }
+    
+
