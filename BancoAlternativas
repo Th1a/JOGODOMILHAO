@@ -1,0 +1,106 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+package com.mycompany.jogodomilhao;
+
+/**
+ *
+ * @author Swat
+ */
+import java.util.*;
+
+
+    public final class BancoAlternativas {
+    protected ArrayList<Questao> questoes;
+
+    public BancoAlternativas() {
+        this.questoes = new ArrayList<>();
+        carregarQuestoes();
+    }
+     public ArrayList<Questao> getQuestoes() {
+        return questoes;
+    }
+
+    public void carregarQuestoes() {
+        
+        Questao questao1 = QuestaoFactory.criarQuestao ("Qual é a definição de uma classe em Java??" ,1);
+        questao1.adicionarAlternativa(new Alternativa("Um tipo de dado primitivo", false));
+        questao1.adicionarAlternativa(new Alternativa("Um método que realiza uma tarefa específica", false));
+        questao1.adicionarAlternativa(new Alternativa("Um modelo ou blueprint para criar objetos", true));
+        questao1.adicionarAlternativa(new Alternativa("Um operador de controle de fluxo", false));
+        questoes.add(questao1);
+
+        // Adicione mais perguntas aqui
+        
+        Questao questao2 = QuestaoFactory.criarQuestao("Qual dos seguintes é um conceito fundamental de POO?" , 2);
+        questao2.adicionarAlternativa(new Alternativa("Encapsulamento", true));
+        questao2.adicionarAlternativa(new Alternativa("Integração", false));
+        questao2.adicionarAlternativa(new Alternativa("Compilação", false));
+        questao2.adicionarAlternativa(new Alternativa("Interpolação", false));
+        questoes.add(questao2);
+
+        // Continue adicionando outras perguntas conforme necessário
+        
+         Questao questao3 = QuestaoFactory.criarQuestao("QO que é um objeto em Java? " ,3);
+        questao3.adicionarAlternativa(new Alternativa("Um conjunto de classes relacionadas", true));
+        questao3.adicionarAlternativa(new Alternativa("Uma instância de uma classe", false));
+        questao3.adicionarAlternativa(new Alternativa("Um arquivo contendo código Java", false));
+        questao3.adicionarAlternativa(new Alternativa("Um método que retorna um valor", false));
+        questoes.add(questao3);
+        
+       Questao questao4 = QuestaoFactory.criarQuestao("O que é herança em POO? " ,4);
+        questao4.adicionarAlternativa(new Alternativa(" Um método que retorna um valor", false));
+        questao4.adicionarAlternativa(new Alternativa(" Um processo onde uma classe adquire as propriedades de outra classe", true));
+        questao4.adicionarAlternativa(new Alternativa("Uma variável que armazena dados temporários", false));
+        questao4.adicionarAlternativa(new Alternativa("Um tipo de dado primitivo", false));
+        questoes.add(questao4);
+        
+        Questao questao5 = QuestaoFactory.criarQuestao("Qual palavra-chave é usada para criar um objeto em Java? " ,5);
+        questao5.adicionarAlternativa(new Alternativa("create", false));
+        questao5.adicionarAlternativa(new Alternativa("instantiate", false));
+        questao5.adicionarAlternativa(new Alternativa("new", true));
+        questao5.adicionarAlternativa(new Alternativa("object", false));
+        questoes.add(questao5);
+        
+        Questao questao6 = QuestaoFactory.criarQuestao("Qual é o propósito do encapsulamento em POO? " ,6);
+        questao6.adicionarAlternativa(new Alternativa("Melhorar a performance do programa", false));
+        questao6.adicionarAlternativa(new Alternativa("Esconder a complexidade interna de um objeto e proteger seus dados", true));
+        questao6.adicionarAlternativa(new Alternativa("Permitir múltiplas heranças", false));
+        questao6.adicionarAlternativa(new Alternativa("Forçar o uso de métodos privados", false));
+        questoes.add(questao6);
+        
+         Questao questao7 = QuestaoFactory.criarQuestao("O que significa polimorfismo em POO? " ,7);
+        questao7.adicionarAlternativa(new Alternativa("Um método que pode executar múltiplas tarefas", false));
+        questao7.adicionarAlternativa(new Alternativa("A habilidade de um objeto assumir muitas formas", true));
+        questao7.adicionarAlternativa(new Alternativa("Uma classe que pode ser dividida em várias subclasses", false));
+        questao7.adicionarAlternativa(new Alternativa("A capacidade de uma variável armazenar diferentes tipos de dados", false));
+        questoes.add(questao7);
+        
+        Questao questao8 = QuestaoFactory.criarQuestao("Qual é a palavra-chave usada para herdar de uma classe em Java? " ,8);
+        questao8.adicionarAlternativa(new Alternativa("inherit", false));
+        questao8.adicionarAlternativa(new Alternativa("extends", true));
+        questao8.adicionarAlternativa(new Alternativa("super", false));
+        questao8.adicionarAlternativa(new Alternativa("base", false));
+        questoes.add(questao8);
+        
+       Questao questao9 = QuestaoFactory.criarQuestao("O que é um construtor em uma classe Java?",9);
+        questao9.adicionarAlternativa(new Alternativa("Um método que é chamado quando um objeto é criado", true));
+        questao9.adicionarAlternativa(new Alternativa("Um operador para concatenar strings", false));
+        questao9.adicionarAlternativa(new Alternativa("Uma variável que armazena dados globais", false));
+        questao9.adicionarAlternativa(new Alternativa("Um bloco de código que realiza uma iteração", false));
+        questoes.add(questao9);
+        
+       Questao questao10 = QuestaoFactory.criarQuestao("Qual modificador de acesso torna um membro de uma classe acessível apenas dentro da própria classe?" ,10);
+        questao10.adicionarAlternativa(new Alternativa("public", false));
+        questao10.adicionarAlternativa(new Alternativa("protected", false));
+        questao10.adicionarAlternativa(new Alternativa("private", true));
+        questao10.adicionarAlternativa(new Alternativa("default", false));
+        questoes.add(questao10); 
+    }
+    
+   }
+    
+    
+    
+
