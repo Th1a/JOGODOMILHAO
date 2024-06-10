@@ -1,0 +1,47 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
+ */
+package com.mycompany.jogodomilhao;
+
+/**
+ *
+ * @author Swat
+ */   
+   
+    public class Alternativa {
+        
+        static int contador = 1 ;
+        protected boolean correta;
+        protected String alternativas;
+        
+        protected Alternativa( String alternativas, boolean correta){
+        this.correta = correta;
+        this.alternativas=alternativas;
+   
+        } 
+   
+     public String getAlternativas(){
+             
+         return alternativas;
+        }
+     
+     public void setAlternativas(String alternativas){
+     this.alternativas = alternativas;
+        }
+      public boolean isCorreta() {
+        return correta;
+    }
+        @Override 
+        public String toString(){
+            return alternativas;
+            
+        }
+        
+    
+    }
+
+      
+
+    
+
