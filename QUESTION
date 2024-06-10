@@ -8,45 +8,63 @@ package com.mycompany.jogodomilhao;
  *
  * @author Swat
  */
-import java.util.*;
-public class questions {
-    protected static int contador;
-    protected String questaoPrincipal;
-     protected ArrayList<String> alternativas;
-    
-    
-     public questions(String questaoPrincipal){
-     this.questaoPrincipal = questaoPrincipal;
-     this.alternativas = new ArrayList<>();
-     contador ++;
-     }
-     
-     public String getQuestaoPrincipal(){
-         return questaoPrincipal;
-     }
-     public ArrayList<String> getAlternativas(){
-         return alternativas;
-     }
-     public void setQuestoePrincipal(String questaoPrincipal){
-         this.questaoPrincipal = questaoPrincipal;
-     }
-     public void setAlternativas(ArrayList<String> alternativas){
-         this.alternativas = alternativas;
-     }
-     public void  addalternativa(String alternativa){
-         this.alternativas.add(alternativa);
-     }
-     public String exibeDados(){
-          String dados = "Questão " + contador + ": " + questaoPrincipal + "\nAlternativas:\n";
-        char opcao = 'A';
-        for (String alternativa : alternativas) {
-            dados += opcao + ") " + alternativa + "\n";
-            opcao++;
-     }
-        return dados;
-     
+ 
+ import java.util.*;
+/*
+* esta é a classe que representa as questoes
+*/
+public class Questao {
+      /**
+   * Este método é utilizado para somar dois números inteiros
+   * @param contador esse parametro inumera as questoes de ate 10
+   * @param <Alternativa> este ArrayList Onde as alternativas são aramzenadas 
+   * @param enunciado onde fica o enuciado da queastao
+   * @return int o resultado deste método é a soma dos dois números.
+   */
+ 
+    private String enunciado;
+    private int contador;
+    private ArrayList<Alternativa> alternativas;
+
+    public Questao(String enunciado, int contador) {
+        this.enunciado = enunciado;
+        this.contador = contador;
+        this.alternativas = new ArrayList<>();
     }
-}
+    
+    /**
+     * Método que gurada as alternativas em uma arraylist
+     * 
+     * @return retorna alternativa
+     */
+   public ArrayList<Alternativa> getAlternativas() {
+     
+       return alternativas;
+    }
+    /**
+     * Metdo eu vai adcinoar as alternativas nas questoes  
+     * @param alternativa Adiciona uma alternativa 
+     */
+    public void adicionarAlternativa(Alternativa alternativa) {
+        alternativas.add(alternativa);
+    }
+    /**
+     * Transcreva as aletern ativas usando A , B ,C ,D
+     * @return toString retora questao os contadores e usa 
+     */
+    @Override
+    public String toString() {
+        char[] letras = {'A', 'B', 'C', 'D'};
+        StringBuilder resultado = new StringBuilder("Questão " + contador + ": " + enunciado + "\n");
+        for (int i = 0; i < alternativas.size(); i++) {
+           resultado.append(letras[i]).append(". ").append(alternativas.get(i)).append("\n");
+        }
+        return resultado.toString();
+    }
+   }
+ 
+
+    
 
    
 
