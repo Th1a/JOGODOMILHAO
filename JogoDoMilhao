@@ -1,0 +1,88 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ */
+
+package com.mycompany.jogodomilhao;
+
+/**
+ *
+ * @author Swat
+ */
+import java.util.*;
+
+/**
+ * Esta classe representa o jogo do milhao.
+ */
+
+public class JogoDoMilhao {
+    /**
+     * Cria a classe JogoDo milhao
+     * @param   JogoDoMilhao representa o jogo do milhao.
+     */
+
+    public static void main(String[] args) {
+          /**
+         * 
+         * @param metodoMain 
+         */
+        
+        Scanner ler = new Scanner(System.in);
+          /**
+         * 
+         * @param Scanner usado para ler as respostas 
+         */
+        
+      
+        // Cria um jogador 
+        Jogador jogador = new Jogador("X", "Y", true);
+        jogador.verificarNomeErrado();
+        System.out.println(jogador.toString());
+        
+        // Cria o banco de perguntas e o verificador de acertos
+        BancoAlternativas banco = new BancoAlternativas();
+        VerificaResposta verificador = new VerificaResposta();
+
+        // Obtenha a lista de questões e exiba cada uma
+        for (Questao questao : banco.getQuestoes()) {
+            System.out.println(questao);
+            boolean acertou = false;
+            int tentativas = 0;
+            
+            while (!acertou) {
+                // enquanto acertou for = false ou seja enquanto a resposta estiver errado , ira repetir.
+                System.out.println("Digite sua resposta: |A|B|C|D|");
+                String resposta = ler.nextLine().toUpperCase();
+
+                // Verifica se a resposta é válida
+                if (!resposta.equals("A") && !resposta.equals("B") && !resposta.equals("C") && !resposta.equals("D")) {
+                    System.out.println("Alternativa inválida!");
+                    continue;
+                }
+
+                tentativas++;
+                //verifica as repsotas.Primeiro 1 trnasforma A tring em um numuero 2 depios comparamos a alternativa com o indice da resposta 3 usamos o verificador que é uma varia DE VERIFCAR RESPOSTA 4 definimos como acertou como iscorreta e aleternativa escolinha
+                int indiceResposta = resposta.charAt(0) - 'A';
+                Alternativa alternativaEscolhida = questao.getAlternativas().get(indiceResposta);
+                verificador.checarResposta(alternativaEscolhida, tentativas);
+                acertou = alternativaEscolhida.isCorreta();
+            }
+        }
+
+        System.out.println("Total de pontos: " + verificador.getPontos());// mensagem que fala o total de pontos
+        System.out.println("Total de tentativas: " + verificador.getTentativas() ); // mesnagem relacaionada as tentativas
+        
+        if(verificador.getPontos() == 50){
+            /*
+            * verifica se a pontuação for maior que 50 el@ ganhou o jogo
+            */
+            System.out.println("P-A-R-A-B-E-N-S !!!! " + jogador.getNome()+ ". Voce ganhou 1 milhão de reais!!! ");
+        }
+        if(verificador.getPontos() < 50){
+            /*
+            * No jogo não tem o "PERDER" tem outra primeação.
+            */
+                       System.out.println("Voce ficou com " + verificador.getPontos() + jogador.getNome() +  " mas não se preocupe , voce ganhou 1 milhão de pesos argentinos!!!");
+        }
+        ler.close();
+    }
+}
