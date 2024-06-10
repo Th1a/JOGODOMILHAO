@@ -1,0 +1,56 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+package com.mycompany.jogodomilhao;
+
+/**
+ *
+ * @author Swat
+ */
+     public class VerificaResposta {
+     protected int pontos ;
+     protected int tentativas;
+   
+     
+     public  VerificaResposta (){
+     this.pontos = 0;
+    }
+    
+    public int getPontos(){
+    return pontos;
+    }
+    public void setPontos (int pontos){
+        this.pontos = pontos;
+    }
+    public int getTentativas(){
+        return tentativas;
+    }
+    public void setTentativas(int tentativas){
+        this.tentativas = tentativas;
+    }
+    public void checarResposta(Alternativa effectveChoise , int tentativas ){
+        if(effectveChoise.isCorreta()){
+         
+            if (effectveChoise.isCorreta() && tentativas == 1){
+               System.out.println("Voce acertou de primeira !! , por isso voce ganhou 5 pontos");
+                pontos += 5;
+            }else if (effectveChoise.isCorreta()&&tentativas > 1){
+                System.out.println("Voce acertou na tentantiva " +tentativas);
+                pontos += 3;
+            }
+            else{
+                System.out.println("Errrrou! tente novamente");
+            }
+            
+        }
+       }
+        
+       
+    
+     }
+
+
+
+
+
